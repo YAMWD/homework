@@ -14,7 +14,7 @@ public:
     int playerMonster;
     int playerBrickProduce;
     int playerDiamondProduce;
-    int playerMonsterProduce:
+    int playerMonsterProduce;
 public:
     playerinfo();
 };
@@ -22,53 +22,34 @@ public:
 class cardsinfo
 {
 private:
-    string name;
+    std::string name;
+    std::string description;
     int costtype;
     int cost;
-    int mBrick;
-    int mDiamond;
-    int mMonster;
-    int mBrickp;
-    int mDiamondp;
-    int mMonsterp;
-    int uBrick;
-    int uDiamond;
-    int uMonster;
-    int uBrickp;
-    int uDiamondp;
-    int uMonsterp;
-    int attack;
-    flag changeable;
-    flag both;
+    bool changeable;
+    bool again;
 public:
+    std::string Getname();
+    std::string Getdescription();
     int Getcosttype();
     int Getcost();
-    int GetmBrick();
-    int GetmDiamond();
-    int GetmMonster();
-    int GetmBrickp();
-    int GetmDiamondp();
-    int GetmMonsterp();
-    int GetuBrick();
-    int GetuDiamond();
-    int GetuMonster();
-    int GetuBrick;
-    int GetuDiamondp();
-    int GetuMonsterp();
-    int Getattack();
     bool Getchangeable();
-    bool Getboth();
-    cardsinfo ();
+    bool Getagain();
+    cardsinfo (std::string name,int costtype,int cost,bool changeable,bool both);
 };
+
+cardsinfo card[90];
 
 class gameinfo
 {
 private:
     int VictoryTowerLevel;
     int VictoryResourcesQuantity;
+    int EndingRounds;
 public:
     int GetVictoryTowerLevel();
     int GetVictoryResourcesQuantity();
+    int GetEndingRounds();
     gameinfo ();
 };
 #endif // INFO_H
